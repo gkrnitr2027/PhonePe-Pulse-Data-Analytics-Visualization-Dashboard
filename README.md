@@ -19,61 +19,6 @@ The goal of this project is to transform PhonePe Pulse's raw JSON data into a st
 🏙️ Which districts are the major transaction hubs?
 💰 How does transaction value vary across different regions?
 📊 What are the year-over-year trends in digital payments?
-🏗️ Architecture
-                    PHONEPE PULSE DATA
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │   Nested JSON Dataset   │
-              │  States / Districts /   │
-              │  Years / Quarters       │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │      Python ETL         │
-              │    extract_data.py      │
-              │                         │
-              │ • Extract JSON          │
-              │ • Normalize data        │
-              │ • Handle schema drift   │
-              │ • Transform records     │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │    Structured CSVs      │
-              │                         │
-              │ aggregated_transactions │
-              │ top_transactions        │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │      PostgreSQL         │
-              │     phonepe_pulse       │
-              │                         │
-              │ • Relational tables     │
-              │ • Indexed fields        │
-              │ • SQL aggregations      │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │   SQLAlchemy / Psycopg2 │
-              │     Dynamic SQL         │
-              └────────────┬────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │  Streamlit Dashboard    │
-              │        app.py           │
-              │                         │
-              │ • KPIs                  │
-              │ • Charts                │
-              │ • Filters               │
-              │ • Geographic analysis   │
-              └─────────────────────────┘
 
 🔄 ETL & Analytics Workflow
 1. Extract
